@@ -193,6 +193,7 @@
   border-radius: 4px;
   white-space: nowrap;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date {
@@ -211,6 +212,17 @@
 .daterangepicker td.in-range {
   background: #ebf4f8;
   border-radius: 0;
+  font-weight: bold;
+}
+
+.table-condensed td span{
+  border-radius: 0;
+  color: #2980b9;
+  font-size: 9px;
+  padding-left: 2px;
+  top: 3px;
+  /*vertical-align: sub;*/
+  position: relative;
 }
 
 .daterangepicker td.start-date {

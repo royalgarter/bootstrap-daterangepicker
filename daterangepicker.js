@@ -790,7 +790,15 @@
                     if (!disabled)
                         cname += 'available';
 
-                    html += '<td class="' + cname.replace(/^\s+|\s+$/g, '') + '" data-title="' + 'r' + row + 'c' + col + '">' + calendar[row][col].date() + '</td>';
+                    var cellDate = calendar[row][col];
+                    var lunar = convertSolar2Lunar(cellDate.date(), cellDate.month() + 1, cellDate.year(), cellDate.utcOffset() / 60);
+                    
+                    var txtDate = cellDate.date() + 
+                            '<span>' + 
+                                (lunar[0] == 1 ? lunar[0]+'/'+lunar[1]: lunar[0]) +
+                            '</span>';
+
+                    html += '<td class="' + cname.replace(/^\s+|\s+$/g, '') + '" data-title="' + 'r' + row + 'c' + col + '">' + txtDate + '</td>';
 
                 }
                 html += '</tr>';
